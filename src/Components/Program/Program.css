@@ -1,0 +1,72 @@
+.programs {
+    margin: 80px auto;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.program {
+    flex-basis: 31%;
+    position: relative;
+    /* Ensures the caption is positioned relative to the program */
+}
+
+.program img {
+    width: 100%;
+    border-radius: 10px;
+    display: block;
+    transition: transform 0.4s ease;
+    /* Adds a smooth transition for the image */
+}
+
+.caption {
+    position: absolute;
+    /* Positions the caption absolutely within the .program container */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 15, 152, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: #fff;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.4s ease, padding-top 0.4s ease;
+    /* Smooth transition for opacity and padding */
+    padding-top: 70%;
+    /* Starts with padding to move the content down */
+    border-radius: 10px;
+    /* Ensures the caption matches the image's rounded corners */
+}
+
+.caption img {
+    width: 60px;
+    margin-bottom: 10px;
+}
+
+.program:hover .caption {
+    opacity: 1;
+    padding-top: 0;
+    /* Moves the caption content to the center */
+}
+
+.program:hover img {
+    transform: scale(1);
+    /* Keeps the image scale fixed, ensuring it doesn’t zoom in or out */
+}
+
+/* Media Querry */
+
+@media (max-width:650px){
+    .programs{
+        flex-direction: column;
+    }
+    .program{
+        flex-basis: 100%;
+        margin: 20px;
+    }
+}
